@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}home{% endblock %}
+
+{% block content %}
+
+    {% include "intro.html" %}
+
+    {% for postObj in blogPostList %}
+        {% include "blog/list-inline.html" with postObj=postObj %}
+    {% endfor %}
+
+{% endblock %}

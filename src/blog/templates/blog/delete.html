@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}blog: delete post{% endblock %}
+
+{% block content %}
+
+<h1>Delete a blog post:</h1>
+<br>
+<br>
+<h4>{{ postObj.title }}</h4>
+<br>
+<br>
+<p>Are you sure? This action is irreversible!</p>
+
+<form method="POST"> {% csrf_token %}
+
+    <input type="checkbox" required="required" value="0"><p style="display:inline; padding-left:10px;"><span class="fas fa-exclamation-triangle"></span> Yes, I understand</p>
+    <br>
+    <br>
+    <a class="btn btn-info" href="/blog/{{ postObj.slug }}"><span class="fas fa-angle-left"></span> Back</a>
+    <button class="btn btn-danger"><span class="fas fa-trash"></span> Delete</button>
+
+</form>
+
+{% endblock %}

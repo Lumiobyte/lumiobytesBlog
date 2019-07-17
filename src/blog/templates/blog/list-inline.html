@@ -1,0 +1,11 @@
+<div class="card mb-3 mr-5">
+    <div class="card-body">
+        {% if postObj.image%}
+        <img src="{{ postObj.image.url }}" class="card-img-top">
+        {% endif %}
+        <h5 class="card-title">{{ postObj.title }}</h5>
+        <p class="card-text">{{ postObj.content|linebreaks|truncatewords:30 }}</p>
+        <a class="btn btn-info" href="/blog/{{ postObj.slug }}"><span class="fas fa-angle-right"></span> Read post</a>
+        <p class="card-text" style="padding-top: 5px; font-size: 13px; color: rgb(165, 165, 165);"><span class="fas fa-info-circle"></span> By {{ postObj.user }} / Published {{ postObj.add_timestamp }} UTC</p>
+    </div>
+</div>

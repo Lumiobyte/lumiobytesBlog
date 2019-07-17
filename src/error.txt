@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "c:/Users/evanp/Documents/Programming/Python/Games/PyGame Clicker/script.py", line 655, in <module>
+    random.love(asdf)
+AttributeError: module 'random' has no attribute 'love'
+

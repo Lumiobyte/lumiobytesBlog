@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}blog{% endblock %}
+
+{% block content %}
+
+<h1>Lumiobyte's Blog</h1>
+
+{% if request.user.is_authenticated %}
+    {% if request.user.is_staff %}
+    <a class="btn btn-success" href="/createBlogPost"><span class="fas fa-pen"></span> Create post</a>
+    <br>
+    <br>
+    {% endif %}
+{% endif %}
+
+    {% for postObj in postObjList %}
+
+        <div class="card-group">
+            {% include "blog/list-inline.html" with postObj=postObj %}
+        </div>
+
+    {% endfor %}
+
+{% endblock %}

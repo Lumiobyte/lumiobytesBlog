@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}blog: update post{% endblock %}
+
+{% block content %}
+
+<h1>Update a blog post:</h1>
+
+<form method="POST", action="."> {% csrf_token %}
+    {{ form.as_p }}
+
+    <a class="btn btn-info" href="/blog/{{ postObj.slug }}"><span class="fas fa-info-circle"></span> View post</a>
+    <button class="btn btn-success" type="submit"><span class="fas fa-save"></span> Save edits</button>
+</form>
+
+{% endblock %}
