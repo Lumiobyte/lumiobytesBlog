@@ -8,7 +8,6 @@ from django.contrib.admin.views.decorators import staff_member_required
 def blogPostList(request):
     template = "blog/list.html"
     postQuerySet = BlogPost.objects.all()
-    random.lol()
     context = {"postObjList": postQuerySet}
 
     return render(request, template, context)
