@@ -37,6 +37,7 @@ urlpatterns = [
 ]
 
 
+import os
 from django.conf.urls.static import static
 
 print(os.path.join(settings.LOCAL_STATIC_CDN_PATH, 'static'))
