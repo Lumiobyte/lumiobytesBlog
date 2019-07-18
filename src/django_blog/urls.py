@@ -22,6 +22,8 @@ from .views import home_page, about_page, contact_page
 from blog.views import blogPostCreate
 from search.views import search_view
 
+import os
+
 urlpatterns = [
     path('administrator/', admin.site.urls),
 
