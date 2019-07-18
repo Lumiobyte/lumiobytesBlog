@@ -5,6 +5,8 @@ from .forms import BlogPostModelForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 
+from django.conf import settings
+
 def blogPostList(request):
     template = "blog/list.html"
     postQuerySet = BlogPost.objects.all()
@@ -22,6 +24,9 @@ def blogPostCreate(request):
         obj.user = request.user
         obj.save()
         form = BlogPostModelForm()
+
+    print(settings.BASE_DIR + "< base dir | local static cdn >" + settings.LOCAL_STATIC_CDN_PATH)
+    print(settings.STATIC_ROOT + "< static root | media root >" + settings.MEDIA_ROOT)
 
     context = {"form": form}
 
