@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1l(nm$+!f5$cvqtt157(gpd741$^kkyoyrjs6e43plf08fy#d7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["lumiobyte.com", "138.197.11.90"]
 
