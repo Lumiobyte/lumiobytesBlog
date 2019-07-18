@@ -46,7 +46,7 @@ urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 """
 
-"""import os
+import os
 
 from django.conf import settings
 from django.core.wsgi import get_wsgi_application
@@ -60,4 +60,4 @@ application = WhiteNoise(
     application=get_wsgi_application(),
     root=settings.MEDIA_ROOT,
     prefix=settings.MEDIA_URL
-)"""
+)
