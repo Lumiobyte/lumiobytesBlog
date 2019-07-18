@@ -38,5 +38,7 @@ urlpatterns = [
 
 from django.conf.urls.static import static
 
+print(os.path.join(settings.LOCAL_STATIC_CDN_PATH, 'static'))
+
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
