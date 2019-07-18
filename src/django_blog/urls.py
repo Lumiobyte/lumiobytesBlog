@@ -37,10 +37,27 @@ urlpatterns = [
 ]
 
 
-import os
+"""import os
 from django.conf.urls.static import static
 
 print(os.path.join(settings.LOCAL_STATIC_CDN_PATH, 'static'))
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+"""
+
+import os
+
+from django.conf import settings
+from django.core.wsgi import get_wsgi_application
+from whitenoise import WhiteNoise
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'PROJECT_NAME_HERE.settings')
+
+WhiteNoise.autorefresh = True
+
+application = WhiteNoise(
+    application=get_wsgi_application(),
+    root=settings.MEDIA_ROOT,
+    prefix=settings.MEDIA_URL
+)
