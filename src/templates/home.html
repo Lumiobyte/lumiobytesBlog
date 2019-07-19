@@ -5,6 +5,8 @@
 {% block content %}
 
     {% include "intro.html" %}
+    <br>
+    <br>
 
     {% for postObj in blogPostList %}
         {% include "blog/list-inline.html" with postObj=postObj %}

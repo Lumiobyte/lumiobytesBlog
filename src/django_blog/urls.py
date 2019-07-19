@@ -26,8 +26,8 @@ urlpatterns = [
     path('administrator/', admin.site.urls),
 
     path('', home_page),
-    path('about/', about_page),
-    path('contact/', contact_page),
+    #path('about/', about_page),
+    #path('contact/', contact_page),
 
     path('blog/', include('blog.urls')),
 

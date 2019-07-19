@@ -8,7 +8,7 @@ User = settings.AUTH_USER_MODEL
 
 class BlogPostQuerySet(models.QuerySet):
     def search(self, query):
-        lookup = Q(title__icontains=query) | Q(content__icontains=query) | Q(slug__icontains=query)
+        lookup = Q(title__icontains=query) | Q(content__icontains=query) | Q(slug__icontains=query) | Q(description__icontains=query)
 
         return self.filter(lookup)
 
@@ -27,6 +27,7 @@ class BlogPost(models.Model):
     user = models.ForeignKey(User, default=1, null=True, on_delete=models.SET_NULL)
 
     slug = models.SlugField(unique = True)
+    description = models.CharField(max_length = 100)
     title = models.CharField(max_length = 120)
     image = models.ImageField(upload_to="images/", blank=True, null=True)
     content = models.TextField(null = True, blank = True)

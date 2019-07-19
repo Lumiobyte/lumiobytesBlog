@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% block description %}{{ postObj.description }}{% endblock %}
 {% block pageTitle %}blog: {{ postObj.title }}{% endblock %}
 
 {% block content %}
