@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}Contact Requests{% endblock %}
+
+{% block content %}
+
+<h1>Your Contact Requests</h1>
+
+    {% for contactObj in contactObjList %}
+
+        <div class="card-group">
+            {% include "contact/requestInline.html" with contactObj=contactObj %}
+        </div>
+
+    {% endfor %}
+
+{% endblock %}

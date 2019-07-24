@@ -1,0 +1,8 @@
+<div class="card mb-3 mr-5">
+    <div class="card-body">
+        <h5 class="card-title">Name: {{ contactObj.name }}</h5>
+        <p class="card-text">{{ contactObj.content|linebreaks|truncatewords:30 }}</p>
+        <a class="btn btn-info" href="/contactRequests/{{ contactObj.id }}"><span class="fas fa-angle-right"></span> View</a>
+        <p class="card-text" style="padding-top: 5px; font-size: 13px; color: rgb(165, 165, 165);"><span class="fas fa-info-circle"></span> Submitted {{ contactObj.add_timestamp }} UTC</p>
+    </div>
+</div>

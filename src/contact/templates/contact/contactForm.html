@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}Contact{% endblock %}
+
+{% block content %}
+
+<div class="alert alert-warning" role="alert" style="margin-top: 10px;">
+    Contact requests are new! This means they could be buggy. If you submit a request, and don't see a reply from me after 7 days, there may have been an issue processing it and try submitting it again. Thanks for your understanding! 😅
+</div>
+
+<h1>If you want to talk to me (for some reason), submit a request here.</h1>
+<p>I'll have a look at requests every 2-3 days and send you an email when I see your request.</p>
+
+<form method="POST", action="."> {% csrf_token %}
+    {{ form.as_p }}
+
+    <button class="btn btn-success" type="submit"><span class="fas fa-paper-plane"></span> Send</button>
+</form>
+
+{% if didSucceed %}
+<h4 style="color:greenyellow">Success! Your request has been submitted.</h4>
+{% endif %}
+
+{% endblock %}

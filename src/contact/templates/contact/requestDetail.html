@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block description %}Check your contact requests.{% endblock %}
+{% block pageTitle %}Contact requests{% endblock %}
+
+{% block content %}
+
+<h1>{{ contactObj.name }}</h1>
+
+<p style="padding-top: 5px; padding-bottom: 15px; font-size: 13px; color: rgb(165, 165, 165);"><span class="fas fa-info-circle"></span> Submitted {{ contactObj.add_timestamp }} UTC</p>
+<p>{{ contactObj.content|linebreaks }}</p>
+<br>
+<p style="text-decoration: underline">Follow up at: {{ contactObj.email }}</p>
+
+<a class="btn btn-info" href="/contactRequests"><span class="fas fa-angle-left"></span> Back</a>
+<a class="btn btn-danger" href="./delete"><span class="fas fa-trash"></span> Delete</a>
+
+{% endblock %}

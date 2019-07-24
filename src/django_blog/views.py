@@ -1,8 +1,8 @@
 from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.core.mail import send_mail
 
-from .forms import ContactForm
 from blog.models import BlogPost
 
 # if you want to do a .format in django in the html doc use {{valuename}} and then pass a disc in the render
@@ -16,13 +16,3 @@ def home_page(request):
 def about_page(request):
     title = "Abt ((about)) Abt Us"
     return render(request, "about.html", {"title": title})
-
-def contact_page(request):
-    title = "Contact Us"
-
-    form = ContactForm(request.POST or None)
-
-    if form.is_valid():
-        print(form.cleaned_data)
-
-    return render(request, "contactForm.html", {"title": title, "form": form})

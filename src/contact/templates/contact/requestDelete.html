@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}Delete contact request{% endblock %}
+
+{% block content %}
+
+<h1>Delete a contact request</h1>
+<br>
+<br>
+<p>Are you sure? This action is irreversible!</p>
+
+<form method="POST"> {% csrf_token %}
+
+    <input type="checkbox" required="required" value="0"><p style="display:inline; padding-left:10px;"><span class="fas fa-exclamation-triangle"></span> Yes, I understand</p>
+    <br>
+    <br>
+    <a class="btn btn-info" href="/contactRequests/{{ contactObj.id }}/"><span class="fas fa-angle-left"></span> Back</a>
+    <button class="btn btn-danger"><span class="fas fa-trash"></span> Delete</button>
+
+</form>
+
+{% endblock %}
