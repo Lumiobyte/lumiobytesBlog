@@ -2,6 +2,8 @@
 
 {% block pageTitle %}Blog{% endblock %}
 
+{% block analytics %}{% include "analytics.html" %}{% endblock %}
+
 {% block content %}
 
 <h1>Lumiobyte's Blog</h1>
@@ -14,6 +16,7 @@
     {% endif %}
 {% endif %}
 
+    {% include "cardAD.html" %}
     {% for postObj in postObjList %}
 
         <div class="card-group">

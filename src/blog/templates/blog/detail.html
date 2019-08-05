@@ -3,6 +3,8 @@
 {% block description %}{{ postObj.description }}{% endblock %}
 {% block pageTitle %}Blog: {{ postObj.title }}{% endblock %}
 
+{% block analytics %}{% include "analytics.html" %}{% endblock %}
+
 {% block content %}
 {% if postObj.image %}
 <img src="{{ postObj.image.url }}" class="card-img-top">
@@ -11,6 +13,7 @@
 <p style="padding-top: 5px; padding-bottom: 15px; font-size: 13px; color: rgb(165, 165, 165);"><span class="fas fa-info-circle"></span> By {{ postObj.user }} / Published {{ postObj.add_timestamp }} UTC</p>
 <p>{{ postObj.content|linebreaks }}</p>
 {% include "mailinglistform.html" %}
+{% include "cardAD.html" %}
 <a class="btn btn-info" href="/blog"><span class="fas fa-angle-left"></span> Back</a>
 {% if request.user.is_authenticated %}
     {% if request.user.is_staff %}

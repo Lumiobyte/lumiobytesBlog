@@ -2,14 +2,17 @@
 
 {% block pageTitle %}Home{% endblock %}
 
+{% block analytics %}{% include "analytics.html" %}{% endblock %}
+
 {% block content %}
 
     {% include "intro.html" %}
     <br>
     <br>
-    {% include "mailinglistform.html" %}
     {% for postObj in blogPostList %}
         {% include "blog/list-inline.html" with postObj=postObj %}
     {% endfor %}
+    {% include "mailinglistform.html" %}
+    {% include "cardAD.html" %}
 
 {% endblock %}

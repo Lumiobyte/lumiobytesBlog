@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
-{% block pageTitle %}search{% endblock %}
+{% block pageTitle %}Search{% endblock %}
+
+{% block analytics %}{% include "analytics.html" %}{% endblock %}
 
 {% block content %}
 
@@ -17,6 +19,7 @@
 
             {% else %}
 
+                {% include "cardAD.html" %}
                 {% for postObj in results %}
                     <div class="card-group">
                         {% include "blog/list-inline.html" with postObj=postObj %}
