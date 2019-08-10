@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}#100DaysOfCode - Daily Logs{% endblock %}
+
+{% block analytics %}{% include "analytics.html" %}{% endblock %}
+
+{% block content %}
+
+<h1>My #100DaysOfCode</h1>
+<p>#100DaysOfCode is a challenge where you have to code every day for 30min-1h every day, 100 days in a row.</p>
+<p>Here I post logs of my progress in #100daysofcode. Looking for my blog? Go over <a href="/blog" class="btn-link">here</a>!</p>
+    <br></br>
+
+{% if request.user.is_authenticated %}
+    {% if request.user.is_staff %}
+    <a class="btn btn-success" href="/createLog"><span class="fas fa-pen"></span> Add log</a>
+    <br>
+    <br>
+    {% endif %}
+{% endif %}
+
+    {% for log in mostRecentLog %}
+        <h3>My progress: {{ log.dayInternal }}/100</h3>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{ lg.dayInternal }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ log.dayInternal }}%"></div>
+        </div>
+    {% endfor %}
+
+    <br>
+    <br>
+
+    {% include "cardAD.html" %}
+    {% for logObj in logObjList %}
+        <div class="card-group">
+            {% include "daysofcode/item-inline.html" with logObj=logObj %}
+        </div>
+
+    {% endfor %}
+
+{% endblock %}

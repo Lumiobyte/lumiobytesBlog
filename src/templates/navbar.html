@@ -13,6 +13,23 @@
           <a class="nav-link" href="/blog"><span class="fas fa-newspaper"></span> Blog</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="/100daysofcode"><span class="fas fa-laptop-code"></span> #100DaysOfCode</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="fas fa-smile"></span> About
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/about"><span class="fas fa-info-circle"></span> About</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/projects"><span class="fas fa-tasks"></span> Projects</a>
+            <!--
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/todo"><span class="fas fa-pen"></span> To-Do</a>
+            -->
+          </div>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/contact"><span class="fas fa-envelope"></span> Contact</a>
         </li>
         {% if request.user.is_authenticated %}
@@ -27,6 +44,10 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/contactRequests"><span class="fas fa-inbox"></span> Contact Requests</a>
             <a class="dropdown-item" href="/administrator"><span class="fas fa-shield-alt"></span> Admin panel</a>
+            <!--
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/todo"><span class="fas fa-pen"></span> To-Do</a>
+            -->
           </div>
         </li>
         {% endif %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}#100DaysOfCode: Edit log{% endblock %}
+
+{% block content %}
+
+<h1>Update a log:</h1>
+
+<form method="POST", action="."> {% csrf_token %}
+    {{ form.as_p }}
+
+    <a class="btn btn-info" href="/100daysofcode/log/{{ logObj.id }}"><span class="fas fa-info-circle"></span> Back</a>
+    <button class="btn btn-success" type="submit"><span class="fas fa-save"></span> Save edits</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+<div class="card mb-3 mr-5">
+    <div class="card-header">
+        <strong>Day: {{ logObj.day }}</strong>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{ logObj.title }}</h5>
+        <p class="card-text">{{ logObj.content|linebreaks|truncatewords:30 }}</p>
+        <a class="btn btn-info" href="/100daysofcode/log/{{ logObj.id }}"><span class="fas fa-angle-right"></span> Read log</a>
+    </div>
+    <div class="card-footer">
+        <p class="card-text" style="padding-top: 5px; font-size: 13px; color: rgb(165, 165, 165);"><span class="fas fa-info-circle"></span> Log #{{ logObj.id }} / Published {{ logObj.add_timestamp }} UTC</p>
+    </div>
+</div>

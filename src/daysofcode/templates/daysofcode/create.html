@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
-{% block pageTitle %}Blog: Create post{% endblock %}
+{% block pageTitle %}100DaysOfCode: Add log{% endblock %}
 
 {% block content %}
 
-<h1>Create a blog post</h1>
+<h1>Create a log</h1>
 
 <form method="POST", action="." enctype="multipart/form-data"> {% csrf_token %}
     {{ form.as_p }}
 
-    <a class="btn btn-info" href="/blog"><span class="fas fa-angle-left"></span> Back</a>
+    <a class="btn btn-info" href="/100daysofcode"><span class="fas fa-angle-left"></span> Back</a>
     <button class="btn btn-success" type="submit"><span class="fas fa-save"></span> Create</button>
 </form>
 

@@ -1,9 +1,20 @@
 {% extends "base.html" %}
 
-{% block pageTitle %}About{% endblock %}
+{% block pageTitle %}Projects{% endblock %}
 
 {% block analytics %}{% include "analytics.html" %}{% endblock %}
 
 {% block content %}
-<p> some content! </p>
+
+    <h1>Who am I?</h1>
+    <br>
+    <br>
+    <h3>I'm Lumiobyte!</h3>
+    <p>I'm a young developer from NSW, Australia!</p>
+    <p>I like playing games like Minecraft or BeamNG, writing code, and making silly <a href="https://youtube.com/RedonexYT" class="btn-link" >YouTube videos!</a> And also posting on this blog. If I didn't like it, why would I do it?</p>
+    <p>If you want to get in contact with me, send me a request <a href="/contact" class="btn-link" >here</a>.</p>
+    <br>
+    <p>Maybe you should check out my <a class="btn-link" href="/blog">blog</a> now? ^-^</p>
+    {% include "cardAD.html" %}
+
 {% endblock %}

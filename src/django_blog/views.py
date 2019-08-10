@@ -14,5 +14,7 @@ def home_page(request):
     return render(request, "home.html", {"title": title, "blogPostList": postQuerySet})
 
 def about_page(request):
-    title = "Abt ((about)) Abt Us"
-    return render(request, "about.html", {"title": title})
+    return render(request, "about.html", {})
+
+def projects_page(request):
+    return render(request, "projects.html", {})

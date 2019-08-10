@@ -18,16 +18,17 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 
-from .views import home_page, about_page
+from .views import home_page, about_page, projects_page
 from blog.views import blogPostCreate
 from search.views import search_view
 from contact.views import contact_page, contact_requests, view_request, del_request
+from daysofcode.views import dayLogCreate
 
 urlpatterns = [
     path('administrator/', admin.site.urls),
 
     path('', home_page),
-    #path('about/', about_page),
+    path('about/', about_page),
     path('contact/', contact_page),
     path('contactRequests/', include('contact.urls')),
 
@@ -36,6 +37,11 @@ urlpatterns = [
     path('createBlogPost/', blogPostCreate),
 
     path('search/', search_view),
+
+    path('projects/', projects_page),
+
+    path('100daysofcode/', include('daysofcode.urls')),
+    path('createLog/', dayLogCreate)
 ]
 
 

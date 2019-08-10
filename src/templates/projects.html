@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}Projects{% endblock %}
+
+{% block analytics %}{% include "analytics.html" %}{% endblock %}
+
+{% block content %}
+
+    <h1>So, what have I done with my time?</h1>
+    <br>
+    <br>
+    <h3>I program in Python</h3>
+    <p>In fact, this blog is written in Python!</p>
+    <p>I've made more than blogs, though. Check out all of my projects below:</p>
+    <br>
+    <div class="card mb-3 mr-5">
+        <div class="card-body">
+            <!-- <img src="images soon hopefully maybe??" class="card-img-top"> -->
+            <h5 class="card-title">This blog</h5>
+            <p class="card-text">This blog you're reading now is written in Python and HTML! I used Django and Bootstrap for the styling.</p>
+            <a class="btn btn-success" href="/"><span class="fas fa-angle-right"></span> Explore it</a>
+        </div>
+    </div>
+    <div class="card mb-3 mr-5">
+        <div class="card-body">
+            <!-- <img src="images soon hopefully maybe??" class="card-img-top"> -->
+            <h5 class="card-title">?????</h5>
+            <p class="card-text">I have another Python/Django website coming up soon!</p>
+            <a class="btn btn-success disabled" href="insert link"><span class="fas fa-angle-right"></span> Explore it</a>
+        </div>
+    </div>
+    <div class="card mb-3 mr-5">
+        <div class="card-body">
+            <!-- <img src="images soon hopefully maybe??" class="card-img-top"> -->
+            <h5 class="card-title">Idle Clicker Game - Clicky</h5>
+            <p class="card-text">I made an idle clicker game with Pygame! You just click boxes, accumulate score, and use it to play minigames! I'm trying to deploy it right now but I've hit several roadblocks. I'll have a blog post on that in the future!</p>
+            <a class="btn btn-success disabled" href="insert link"><span class="fas fa-angle-right"></span> Get it</a>
+        </div>
+    </div>
+    <div class="card mb-3 mr-5">
+        <div class="card-body">
+            <!-- <img src="images soon hopefully maybe??" class="card-img-top"> -->
+            <h5 class="card-title">Input Statistics</h5>
+            <p class="card-text">I made a program which monitors your keystrokes and clicks and displays a graph! I used pynput and Matplotlib to make this. I still haven't been able to deploy this yet.</p>
+            <a class="btn btn-success disabled" href="insert link"><span class="fas fa-angle-right"></span> Get it</a>
+        </div>
+    </div>
+    <!--
+    <h3>I used to code in C++</h3>
+    <p>Not anymore, but I made some cool stuff! See them:</p>
+    -->
+
+    <p>Maybe you should check out my <a class="btn-link" href="/blog">blog</a> now? ^-^</p>
+    {% include "cardAD.html" %}
+
+{% endblock %}

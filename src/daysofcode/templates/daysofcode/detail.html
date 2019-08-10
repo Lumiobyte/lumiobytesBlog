@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block description %}Log #{{ logObj.id }} of my #100DaysOfCode. Track my #100DaysOfCode progress right here on my blog!{% endblock %}
+{% block pageTitle %}#100DaysOfCode Log #{{ logObj.id }}: {{ logObj.title }}{% endblock %}
+
+{% block analytics %}{% include "analytics.html" %}{% endblock %}
+
+{% block content %}
+<h1>{{ logObj.title }}</h1>
+<p style="padding-top: 5px; padding-bottom: 15px; font-size: 13px; color: rgb(165, 165, 165);"><span class="fas fa-info-circle"></span> By {{ postObj.user }} / Published {{ postObj.add_timestamp }} UTC</p>
+<p>{{ logObj.content|linebreaks }}</p>
+<br>
+<p>I'll send you weekly updates on my #100DaysOfCode as well as normal blog posts if you sign up.</p>
+{% include "mailinglistform.html" %}
+{% include "cardAD.html" %}
+<a class="btn btn-info" href="/100daysofcode"><span class="fas fa-angle-left"></span> Back</a>
+{% if request.user.is_authenticated %}
+    {% if request.user.is_staff %}
+<a class="btn btn-warning" href="./edit"><span class="fas fa-edit"></span> Update</a>
+<a class="btn btn-danger" href="./delete"><span class="fas fa-trash"></span> Delete</a>
+    {% endif %}
+{% endif %}
+
+{% endblock %}
