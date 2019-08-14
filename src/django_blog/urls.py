@@ -24,6 +24,7 @@ from search.views import search_view
 from contact.views import contact_page, contact_requests, view_request, del_request
 from daysofcode.views import dayLogCreate
 from randomopinion.views import viewOpinion, createOpinion
+from redstoneideas.views import viewIdea
 
 urlpatterns = [
     path('administrator/', admin.site.urls),
@@ -45,7 +46,9 @@ urlpatterns = [
     path('createLog/', dayLogCreate),
 
     path('opinion/', viewOpinion),
-    path('createOpinion/', createOpinion)
+    path('createOpinion/', createOpinion),
+
+    path('redstoneideas/', viewIdea)
 ]
 
 
