@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'search',
     'contact',
     'daysofcode',
+    'redstoneideas',
+    'randomopinion',
 ]
 
 if DEBUG:

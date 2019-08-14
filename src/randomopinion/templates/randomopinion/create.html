@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}Add random opinion{% endblock %}
+
+{% block content %}
+
+<h1>Add random opinion</h1>
+
+<form method="POST", action="." enctype="multipart/form-data"> {% csrf_token %}
+    {{ form.as_p }}
+
+    <a class="btn btn-info" href="/opinion"><span class="fas fa-angle-left"></span> Back</a>
+    <button class="btn btn-success" type="submit"><span class="fas fa-save"></span> Add</button>
+</form>
+
+{% endblock %}

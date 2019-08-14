@@ -23,6 +23,7 @@ from blog.views import blogPostCreate
 from search.views import search_view
 from contact.views import contact_page, contact_requests, view_request, del_request
 from daysofcode.views import dayLogCreate
+from randomopinion.views import viewOpinion, createOpinion
 
 urlpatterns = [
     path('administrator/', admin.site.urls),
@@ -41,7 +42,10 @@ urlpatterns = [
     path('projects/', projects_page),
 
     path('100daysofcode/', include('daysofcode.urls')),
-    path('createLog/', dayLogCreate)
+    path('createLog/', dayLogCreate),
+
+    path('opinion/', viewOpinion),
+    path('createOpinion/', createOpinion)
 ]
 
 

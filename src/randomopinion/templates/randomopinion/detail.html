@@ -1,0 +1,57 @@
+
+{% extends "base.html" %}
+
+{% block description %}
+{% for OpinionObj in OpinionObjPage %}My random Opinion: {{ OpinionObj.content|truncatewords:15 }}{% endfor %}
+{% endblock %}
+
+{% block pageTitle %}My random opinion{% endblock %}
+
+{% block analytics %}{% include "analytics.html" %}{% endblock %}
+
+{% block content %}
+
+    <div class="card text-center">
+
+        <div class="card-header">
+            Opinion {{ OpinionObjPage.number }} of {{ OpinionObjPage.paginator.num_pages }}
+        </div>
+
+        {% for OpinionObj in OpinionObjPage %}
+
+            <h3 class="card-title">{{ OpinionObj.content }}</h3>
+
+            <p class="card-text" style="padding-top: 5px; font-size: 13px; color: rgb(165, 165, 165);"><span class="fas fa-info-circle"></span> Added {{ OpinionObj.add_timestamp }} UTC.</p>
+
+            <form method="POST"> {% csrf_token %}
+                <button type="submit" class="btn btn-success mb-2"><span class="fas fa-angle-double-up"></span> {{ OpinionObj.likes }}</button>
+            </form>
+        {% endfor %}
+
+        <div class="card-footer">
+            {% if OpinionObjPage.has_previous %}
+                <div class="btn-group mr-2" aria-label="backward button">
+                    <a class="btn btn-info" href="?p=1"><span class="fas fa-angle-double-left"></span> First</a>
+                    <a class="btn btn-info" href="?p={{ OpinionObjPage.previous_page_number }}"><span class="fas fa-angle-left"></span> Previous</a>
+                </div>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+                {% if request.user.is_staff %}
+                <a class="btn btn-success mr-2" href="/createOpinion"><span class="fas fa-pen"></span> Add new</a>
+                {% endif %}
+            {% endif %}
+            {% if OpinionObjPage.has_next %}
+                <div class="btn-group" role="group" aria-label="button forward">
+                    <a class="btn btn-info" href="?p={{ OpinionObjPage.next_page_number }}"><span class="fas fa-angle-right"></span> Next</a>
+                    <a class="btn btn-info" href="?p={{ OpinionObjPage.paginator.num_pages }}"><span class="fas fa-angle-double-right"></span> Last</a>
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    {% include "cardAD.html" %}
+
+{% endblock %}

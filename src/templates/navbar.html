@@ -9,12 +9,16 @@
         <li class="nav-item"> <!-- you can set active class -->
           <a class="nav-link" href="/"><span class="fas fa-home"></span> Home<span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/blog"><span class="fas fa-newspaper"></span> Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/100daysofcode"><span class="fas fa-laptop-code"></span> #100DaysOfCode</a>
-        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="fas fa-comment-dots"></span> My ramblings
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/blog"><span class="fas fa-newspaper"></span> Blog</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/100daysofcode"><span class="fas fa-laptop-code"></span> #100DaysOfCode</a>
+              <a class="dropdown-item" href="/opinion"><span class="fas fa-lightbulb"></span> My random opinion</a>
+            </div>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="fas fa-smile"></span> About
@@ -41,6 +45,8 @@
             <a class="dropdown-item disabled" href="#"><span class="fas fa-user"></span> Welcome, {{ user }}</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/createBlogPost"><span class="fas fa-pen"></span> Create blog post</a>
+            <a class="dropdown-item" href="/createLog"><span class="fas fa-pen"></span> Create #100DaysOfCode log</a>
+            <a class="dropdown-item" href="/createOpinion"><span class="fas fa-pen"></span> Create random opinion</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/contactRequests"><span class="fas fa-inbox"></span> Contact Requests</a>
             <a class="dropdown-item" href="/administrator"><span class="fas fa-shield-alt"></span> Admin panel</a>
