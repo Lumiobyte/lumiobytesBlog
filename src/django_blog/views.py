@@ -18,3 +18,7 @@ def about_page(request):
 
 def projects_page(request):
     return render(request, "projects.html", {})
+
+def ads(request):
+    content = 'google.com, pub-8076025812516606, DIRECT, f08c47fec0942fa0'
+    return HttpResponse(content, content_type='text/plain')

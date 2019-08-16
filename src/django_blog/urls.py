@@ -18,7 +18,7 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 
-from .views import home_page, about_page, projects_page
+from .views import home_page, about_page, projects_page, ads
 from blog.views import blogPostCreate
 from search.views import search_view
 from contact.views import contact_page, contact_requests, view_request, del_request
@@ -48,7 +48,9 @@ urlpatterns = [
     path('opinion/', viewOpinion),
     path('createOpinion/', createOpinion),
 
-    path('redstoneideas/', viewIdea)
+    path('redstoneideas/', viewIdea),
+
+    path('ads.txt', ads)
 ]
 
 
