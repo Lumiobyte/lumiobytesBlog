@@ -62,7 +62,7 @@ def viewIdea(request):
             '10 wide',
         ]
 
-        ideaBuildWhere = [
+        location = [
             'on a mountain',
             'underwater',
             'underground',
