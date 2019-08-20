@@ -41,7 +41,7 @@ def viewIdea(request):
             '7x7',
             '8x8',
             '9x9',
-            '10x10'
+            '10x10',
             '2 high',
             '3 high',
             '4 high',
