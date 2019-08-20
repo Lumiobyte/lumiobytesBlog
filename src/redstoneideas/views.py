@@ -26,7 +26,7 @@ def viewIdea(request):
             'Bright',
             'Flashing',
             'Simple',
-            'Complex'
+            'Complex',
             'Hidden',
             'Secret',
             'Ugly',
@@ -91,7 +91,7 @@ def viewIdea(request):
             'Flashing',
             'Epilepsy-inducing',
             'Laggy',
-            'Game-crashingly laggy'
+            'Game-crashingly laggy',
             'Hidden', 
             'Secret',
             'Ugly',
@@ -125,7 +125,7 @@ def viewIdea(request):
             'in the air',
             'on an airplane',
             'that pops out of the ground',
-            'that is launched from a flying machine that flies out of a cliff face'
+            'that is launched from a flying machine that flies out of a cliff face',
         ]
 
         idea = random.choice(adjectives) + " " + random.choice(ideaThingsToBuild1) + " " + random.choice(ideaThingsToBuild2) + " " + random.choice(ideaBuildWhere) + "!"
