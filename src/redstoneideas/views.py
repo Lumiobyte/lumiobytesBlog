@@ -17,7 +17,7 @@ def viewIdea(request):
 
     encourageMessage = random.choice(encourageMessageList)
     
-    if random.randint(1, 5) == 2:
+    if random.randint(1, 4) == 2:
         adjectives = [
             'Colourful', 
             'Compact',
@@ -128,6 +128,6 @@ def viewIdea(request):
             'that is launched from a flying machine that flies out of a cliff face'
         ]
 
-            idea = random.choice(adjectives) + " " + random.choice(ideaThingsToBuild1) + " " + random.choice(ideaThingsToBuild2) + " " + random.choice(ideaBuildWhere) + "!"
+        idea = random.choice(adjectives) + " " + random.choice(ideaThingsToBuild1) + " " + random.choice(ideaThingsToBuild2) + " " + random.choice(ideaBuildWhere) + "!"
 
     return render(request, template, {'encourageMessage': encourageMessage, 'idea': idea})
