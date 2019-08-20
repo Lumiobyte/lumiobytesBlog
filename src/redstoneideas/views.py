@@ -17,7 +17,7 @@ def viewIdea(request):
 
     encourageMessage = random.choice(encourageMessageList)
     
-    if random.randint(1, 4) == 2:
+    if random.randint(1, 3) == 2:
         adjectives = [
             'Colourful', 
             'Compact',
