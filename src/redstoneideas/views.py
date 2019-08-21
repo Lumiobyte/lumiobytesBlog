@@ -17,7 +17,9 @@ def viewIdea(request):
 
     encourageMessage = random.choice(encourageMessageList)
     
-    if random.randint(1, 3) == 2:
+    whatidea = random.randint(1, 4)
+
+    if whatidea == 2:
         adjectives = [
             'Colourful', 
             'Compact',
@@ -74,6 +76,61 @@ def viewIdea(request):
         ]
 
         idea = random.choice(adjectives) + " " + random.choice(size) + " piston door " + random.choice(location) + "!"
+
+    elif whatidea == 3:
+        adjectives = [
+            'Colourful', 
+            'Compact',
+            'Big',
+            'Tiny',
+            'Bright',
+            'Flashing',
+            'Simple',
+            'Complex',
+            'Hidden',
+            'Secret',
+            'Ugly',
+            'Inefficient',
+            'Dangerous',
+            'Worrisome',
+            'Automatic'
+        ]
+
+        size = [
+            'tiny',
+            'small',
+            'big',
+            'huge',
+            'supermassive',
+            'colossal',
+        ]
+
+        whatcando = [
+            'can shoot a hole 5 blocks away',
+            'can shoot a hole 10 blocks away',
+            'can shoot a hole 15 blocks away',
+            'can shoot a hole 20 blocks away',
+            'can shoot a hole 25 blocks away',
+            'can shoot at approaching mobs',
+            'can shoot at approaching mobs automatically',
+            'can shoot anything that comes near',
+            'can shoot into the sky',
+            'can shoot in all directions',
+            'can make TNT look like fireworks',
+        ]
+
+        location = [
+            'on a mountain',
+            'underwater (that will be hard)',
+            'underground',
+            'in a secret lair',
+            'out in the open',
+            'in your redstone world',
+            'in a castle',
+            'in a defensive fortress',
+        ]
+
+        idea = random.choice(adjectives) + " " + random.choice(size) + " TNT Cannon that " + random.choice(whatcando) + " " + random.choice(location) + "!"
 
     else:
         adjectives = [
